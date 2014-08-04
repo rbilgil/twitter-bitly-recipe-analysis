@@ -24,8 +24,7 @@ class Bitly:
         data = {}
         for name, endpoint in self.endpoints.iteritems():
             response = requests.get(endpoint, params=query_params, verify=False)
-            print response.content
-            data[name] = json.load(response.content)
+            data[name] = json.loads(response.content)
 
         return data
 
